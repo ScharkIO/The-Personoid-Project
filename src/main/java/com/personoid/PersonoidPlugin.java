@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PersonoidPlugin extends JavaPlugin {
+
+    public static final boolean DEVELOPMENT = "true".equals(System.getenv("DEVELOPMENT")) || System.getProperty("os.name").contains("Win");
     private final Logger LOGGER = Logger.get("Personoid");
     private final NPCRegistry baseRegistry = new NPCRegistry();
     private final Map<String, NPCRegistry> registries = new HashMap<>();

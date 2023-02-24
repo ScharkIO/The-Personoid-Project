@@ -113,6 +113,6 @@ buildNumber.properties
 run/
 
 #custom
-resources/config.json
-script.sh
-src/main/resources/.env
+!/.idea/runConfigurations/Build_Plugin.xml
+!/.idea/runConfigurations/Start_Mapped_Server.xml
+!/.idea/runConfigurations/Start_Server.xml

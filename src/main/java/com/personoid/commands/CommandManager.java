@@ -1,5 +1,6 @@
 package com.personoid.commands;
 
+import com.personoid.PersonoidPlugin;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,6 +16,9 @@ public class CommandManager implements CommandExecutor, TabExecutor {
 
     public static void registerCommands() {
         commands.add(new ConfigCommand());
+        if (PersonoidPlugin.DEVELOPMENT) {
+            commands.add(new NpcCommand());
+        }
     }
 
     @Override

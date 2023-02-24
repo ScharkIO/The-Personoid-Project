@@ -23,7 +23,9 @@ public class NPCBuilder {
         CACHE.put("minecraft_server", ReflectionUtils.findClass(Packages.SERVER, "MinecraftServer"));
         CACHE.put("world_server", ReflectionUtils.findClass(Packages.SERVER_LEVEL, "WorldServer"));
         CACHE.put("game_profile", ReflectionUtils.findClass(Packages.AUTH_LIB, "GameProfile"));
-        CACHE.put("profile_public_key", ReflectionUtils.findClass(Packages.WORLD.plus("entity.player"), "ProfilePublicKey"));
+        if (ReflectionUtils.getVersionInt() >= 19 && ReflectionUtils.getSubVersionInt() <= 2) {
+            CACHE.put("profile_public_key", ReflectionUtils.findClass(Packages.WORLD.plus("entity.player"), "ProfilePublicKey"));
+        }
     }
 
     public static NPC create(GameProfile profile) {
